@@ -9,11 +9,13 @@ import fileinput
 # 192.168.1.15:1234
 class getData:
     def __init__(self, get_url):
+        print(self,'is there any url',get_url)
         self.get_url = get_url
         os.system('pip3 install requests')
 
     def fetchData(self):
         # API GET URL goes inside the quotes below DON'T CHANGE ANYTHING ELSE!
+        print('self in  fetch data',self)
         resp_data = requests.get(self.get_url).json()
         formatted_data = resp_data['data']
         proc_data = json.dumps(formatted_data)
@@ -61,5 +63,9 @@ class getData:
         # f.write(newdata)
         # f.close()
 
-getIt = getData("https://backendtuneapi.herokuapp.com/gettokendata")
+# getIt = getData("https://backendtuneapi.herokuapp.com/gettokendata")
+getIt=getData("http://ec2-13-229-250-134.ap-southeast-1.compute.amazonaws.com:3000/admin/deployed-tokens")
+
 getIt.fetchData()
+
+
