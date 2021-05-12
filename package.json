@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "childprocess": "^2.0.2",
     "express": "^4.16.3",
     "python-shell": "^1.0.8",
